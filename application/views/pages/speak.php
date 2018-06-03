@@ -93,7 +93,7 @@ ul.b {
 </head>
 <body>
 
-<div class=" text-center" >    
+<div>    
   <div class="row" style="border-bottom:8px solid black;">
 
     <div class="col-sm-5" >
@@ -104,9 +104,9 @@ ul.b {
       <h1 class="text-uppercase faded animated fadeInRight" align="left">Speak For Change<hr></h1>
    </div>
      <ul class="b" style="font-size: 16px">
-      <li> Founded in 2016.</li><br>
-      <li> Works for the speech of public. </li><br>
-      <li> Located at Hyderabad.</li>
+      <li style="padding-left: 20px;"> Founded in 2016.</li><br>
+      <li style="padding-left: 20px;"> Works for the speech of public. </li><br>
+      <li style="padding-left: 20px;"> Located at Hyderabad.</li>
     </ul> 
   </div>
 
