@@ -19,8 +19,8 @@
 </div>
 <div id="footer">
       <div class="container">
-        <p class="text-muted" style="padding-top:5px;color:#fff;">
-		Copyright &copy; Chaithanya Bharathi Institute of Technology <b>Faculty Info System</b> - Developed  and supported by CSE  students  
+        <p class="text-muted" style="padding-top:5px;color:#fff;" align="center">
+		Copyright &copy; <b>Funding Tracking Solutions </b> - Pvt Ltd  
 		</p>
       </div>
     </div>
