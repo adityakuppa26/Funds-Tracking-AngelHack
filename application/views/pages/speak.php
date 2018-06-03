@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" type="text/css" href="
 <?php echo base_url()?>/assets/css/animate.css">
@@ -98,10 +100,10 @@ ul.b {
       <img src="
     <?php echo base_url()?>/assets/images/speak.jpg" style="width:400px;height:250px;" class="text-uppercase faded animated headShake"> 
     </div>
-    <div class="col-sm-7"> 
+    <div class="col-sm-7" style="font-family: oblique;color:#70db70"> 
       <h1 class="text-uppercase faded animated fadeInRight" align="left">Speak For Change<hr></h1>
    </div>
-     <ul class="b">
+     <ul class="b" style="font-size: 16px">
       <li> Founded in 2016.</li><br>
       <li> Works for the speech of public. </li><br>
       <li> Located at Hyderabad.</li>
@@ -113,7 +115,7 @@ ul.b {
 <div class="container">
   <div class="row">
     <div class="panel panel-info">
-    <div class="panel-heading"> Bank Accounts</div>  
+    <div class="panel-heading"> Bank Accounts<i class="fa fa-inr" style="padding-left: 10px;"></i></div>  
   <br>        
   <table class="table table-hover">
     <thead>
@@ -143,6 +145,8 @@ ul.b {
   </table>
 </div>
   </div>
+  <br>
+ <div align="center"> <button class="btn btn-success">Add Transaction</button> </div>
 <br><br>
 <hr size="20">
 <h2 align="center">Ratings : </h2><br>
