@@ -93,20 +93,20 @@ ul.b {
 </head>
 <body>
 
-<div class=" text-center" >    
+<div>    
   <div class="row" style="border-bottom:8px solid black;">
 
-    <div class="col-sm-5" >
+    <div class="col-sm-5">
       <img src="
     <?php echo base_url()?>/assets/images/splash.png" style="width:400px;height:250px;" class="text-uppercase faded animated headShake"> 
     </div>
     <div class="col-sm-7" style="font-family: oblique;color:#85e0e0" > 
       <h1 class="text-uppercase faded animated fadeInRight" align="left" >Splash<hr></h1>
    </div>
-     <ul class="b" style="font-size: 16px">
-      <li> Founded in 2013.</li><br>
-      <li> Works for the saving of water bodies </li><br>
-      <li> Located at Bangalore.</li>
+     <ul class="b" style="font-size: 16px;">
+      <li style="padding-left: 20px;"> Founded in 2013.</li><br>
+      <li style="padding-left: 20px;"> Works for the saving of water bodies </li><br>
+      <li style="padding-left: 20px;"> Located at Bangalore.</li>
     </ul> 
   </div>
 
