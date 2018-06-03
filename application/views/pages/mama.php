@@ -93,7 +93,7 @@ ul.b {
 </head>
 <body>
 
-<div class=" text-center" >    
+<div>    
   <div class="row" style="border-bottom:8px solid black;">
 
     <div class="col-sm-5" >
@@ -104,9 +104,9 @@ ul.b {
       <h1 class="text-uppercase faded animated fadeInRight" align="left">Mama's Children<hr></h1>
    </div>
      <ul class="b" style="font-size: 16px">
-      <li> Founded in 2001.</li><br>
-      <li> Works for the nurturing of infant babies. </li><br>
-      <li> Located at Mysore.</li>
+      <li style="padding-left: 20px;"> Founded in 2001.</li><br>
+      <li style="padding-left: 20px;"> Works for the nurturing of infant babies. </li><br>
+      <li style="padding-left: 20px;"> Located at Mysore.</li>
     </ul> 
   </div>
 
