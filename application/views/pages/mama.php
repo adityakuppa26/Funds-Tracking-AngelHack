@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
-  padding: 50px;
+ 
 }
 form .stars {
   background: url("<?php echo base_url()?>/assets/images/stars.png") repeat-x 0 0;
@@ -124,30 +124,35 @@ ul.b {
         <th>Bank Account name</th>
         <th>Bank</th>
         <th>Account No.</th>
-        <th>Book Balance</th>
         <th>Bank Balance</th>
         <th>Last Updated</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
+      <?php 
+        $i=1;
+        foreach($tranx as $s) {
+      ?>
       <tr>
-        <td>1</td>
-        <td>Doe</td>
-        <td>SBI</td>
-        <td>456787</td>
-        <td>Rs 19000</td>
-        <td>Rs 20000</td>
-        <td>26/09/2018</td>
-        <td><a href="##"><button class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button></a></td>
+        <td><?php echo $i++ ;?></td>
+        <td><?php echo $s->acnt_name; ?></td>
+        <td><?php echo $s->bnk_name; ?></td>
+        <td><?php echo $s->acnt_num; ?></td>
+        <td><?php echo $s->bb_bal; ?></td>
+        <td><?php echo $s->last_date ;?></td>
       </tr>
+<?php } ?>
     </tbody>
   </table>
 </div>
   </div>
   <br>
- <div align="center"> <button class="btn btn-success">Add Transaction</button> </div>
+  <?php if($this->session->userdata('user_id')=='2') { ?>
+  <div align="center"> <button class="btn btn-success">Add Transaction</button> </div>
+  <?php }?>
 <br><br>
+<?php if($this->session->userdata('user_id')=='1') { ?>
 <hr size="20">
 <h2 align="center">Ratings : </h2><br>
 <form id="ratingsForm">
@@ -167,6 +172,6 @@ ul.b {
   <br><br>
  <div align="center"> <button class="btn btn-success">Submit</button> </div>
 </form>
+<?php } ?>
 <br><br>
 </body>
-</html>

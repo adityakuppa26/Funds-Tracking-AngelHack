@@ -10,7 +10,7 @@ class Home extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-	//	$this->load->model("user_model");
+		$this->load->model("user_model");
 		$this->load->helper('url');
         $this->load->helper('form');
 		$this->load->library('form_validation');
@@ -30,18 +30,17 @@ class Home extends CI_Controller {
 		$this->load->view('templates/footer',$this->page_data); 
 	}//index
 
-
 	public function login(){
-		$this->load->view('templates/header',$this->page_data); 
+		$this->login_user();
+		$this->page_data['title'] = "Login|" . $this->site_name;
+		
+		$this->load->view('templates/header',$this->page_data);
+
 		$this->load->view('pages/login');
 		$this->load->view('templates/footer',$this->page_data); 
     }// login
 	
-	public function speak(){
-		$this->load->view('templates/header',$this->page_data);
-		$this->load->view('pages/speak');
-		$this->load->view('templates/footer',$this->page_data);
-	}
+	
 	
 	function register_email_check() {
 		$email = $this->input->post('email');
@@ -59,17 +58,18 @@ class Home extends CI_Controller {
 		if ($this->form_validation->run()) {
 			$user_data = $this->user_model->get_user_data($this->input->post('email'));
 			$session_data = array(
-				'user_name' => $user_data['DisplayName'],
-				'user_id' => $user_data['UserID'],
-				'Gender' => $user_data['Gender'],
-				'phone' => $user_data['Phone'],
-				'firstName' => $user_data['FirstName'],
-				'lastName' => $user_data['LastName'],
-				'email' => $user_data['EmailID'],
+				'user_id' => $user_data['user_id'],
+				'email' => $user_data['user_name'],
+				'user_type' => $user_data['user_type'],
+				'org_id' => $user_data['org_id'],
 				'is_logged_in' => true
 			);
 			$this->session->set_userdata($session_data);
-			redirect('home/dummy');
+			if($user_data['user_type']==1)
+			redirect('organization/all_org/');
+			}
+			 if($user_data['user_type']==2){
+				redirect('organization/user_org/'.$user_data['org_id']);
 			}
 			$this->page_data['error'] = true;
 		}  
@@ -78,7 +78,7 @@ class Home extends CI_Controller {
 	function login_credentials_check() {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		
+
 		if ($this->user_model->check_email_exists($email)) {    
 			if ($this->user_model->check_credentials($email, $password)) {
 				return true;
@@ -100,4 +100,3 @@ class Home extends CI_Controller {
 	   redirect('home', 'refresh');
 	 }
 }
-

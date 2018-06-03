@@ -52,21 +52,21 @@ header, footer {
   <div class="row">
     <div class="col-sm-4" >
  <fieldset>
-        <legend><a href="https://www.google.com/"><img src="
+        <legend><a href="<?php echo base_url();?>organization/user_org/2"><img src="
 <?php echo base_url()?>/assets/images/speak.jpg" style="width:100%;padding-top:35px;" alt="ngo1"></a></legend>
   This NGO helps preserve the voice of the common public. 
  </fieldset>
     </div>
     <div class="col-sm-4"> 
  <fieldset>
-      <legend><a href="https://www.google.com/"><img src="
+      <legend><a href="<?php echo base_url();?>organization/user_org/3"><img src="
 <?php echo base_url()?>/assets/images/splash.png" alt="Image" style="padding-top:18px;" width="70%" height="50%" ></a></legend>
  This organisation works towards spreading awareness to save water.
  </fieldset>    
 </div>
     <div class="col-sm-4"> 
  <fieldset>
-      <legend><a href="https://www.google.com/"><img src="
+      <legend><a href="<?php echo base_url();?>organization/user_org/4"><img src="
 <?php echo base_url()?>/assets/images/mama.png" alt="Image" style="padding-top:23px;" ></a>  </legend>
  Mama's children provides all basic necessities free of cost to the malnutritioned infants.
  </fieldset>  

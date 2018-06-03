@@ -9,11 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" type="text/css" href="
-<?php echo base_url()?>/assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>/assets/css/animate.css">
+<script>
+ function stars_rating(){
+      var count = max(document.getElementById(star-1).value ,document.getElementById(star-2).value,document.getElementById(star-3).value,document.getElementById(star-4).value,document.getElementById(star-5).value,)
+      //document.write(count);
+ }
+</script>
 <style>
 body {
-  padding: 50px;
+
 }
 form .stars {
   background: url("<?php echo base_url()?>/assets/images/stars.png") repeat-x 0 0;
@@ -124,49 +129,56 @@ ul.b {
         <th>Bank Account name</th>
         <th>Bank</th>
         <th>Account No.</th>
-        <th>Book Balance</th>
         <th>Bank Balance</th>
         <th>Last Updated</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
+      <?php 
+        $i=1;
+        foreach($tranx as $s) {
+      ?>
       <tr>
-        <td>1</td>
-        <td>Doe</td>
-        <td>SBI</td>
-        <td>456787</td>
-        <td>Rs 19000</td>
-        <td>Rs 20000</td>
-        <td>26/09/2018</td>
-        <td><a href="##"><button class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button></a></td>
+        <td><?php echo $i++ ;?></td>
+        <td><?php echo $s->acnt_name; ?></td>
+        <td><?php echo $s->bnk_name; ?></td>
+        <td><?php echo $s->acnt_num; ?></td>
+        <td><?php echo $s->bb_bal; ?></td>
+        <td><?php echo $s->last_date ;?></td>
       </tr>
+<?php } ?>
     </tbody>
   </table>
 </div>
   </div>
   <br>
- <div align="center"> <button class="btn btn-success">Add Transaction</button> </div>
-<br><br>
+  <?php if($this->session->userdata('user_id')=='2') { ?>
+  <div align="center"> <a href="<?php echo base_url();?>organization/add_transaction"><button class="btn btn-success">Add Transaction</button></a> </div>
+  <?php }?>
+  <br><br>
+<?php if($this->session->userdata('user_id')=='1') { ?>
 <hr size="20">
 <h2 align="center">Ratings : </h2><br>
+
 <form id="ratingsForm">
   <div class="stars">
-    <input type="radio" name="star" class="star-1" id="star-1" />
+    <input type="radio" name="star" class="star-1" id="star-1" value="1" />
     <label class="star-1" for="star-1">1</label>
-    <input type="radio" name="star" class="star-2" id="star-2" />
+    <input type="radio" name="star" class="star-2" id="star-2" value="2"/>
     <label class="star-2" for="star-2">2</label>
-    <input type="radio" name="star" class="star-3" id="star-3" />
+    <input type="radio" name="star" class="star-3" id="star-3" value="3"/>
     <label class="star-3" for="star-3">3</label>
-    <input type="radio" name="star" class="star-4" id="star-4" />
+    <input type="radio" name="star" class="star-4" id="star-4" value="4"/>
     <label class="star-4" for="star-4">4</label>
-    <input type="radio" name="star" class="star-5" id="star-5" />
+    <input type="radio" name="star" class="star-5" id="star-5" value="5"/>
     <label class="star-5" for="star-5">5</label>
     <span></span>
   </div>
   <br><br>
- <div align="center"> <button class="btn btn-success">Submit</button> </div>
+ <div align="center"> <button class="btn btn-success" onclick="stars_rating();">Submit</button> </div>
 </form>
+<?php }?>
 <br><br>
 </body>
 </html>

@@ -29,23 +29,31 @@
 </style>
 </head>
 <body>
+<?php if ($this->session->userdata('is_logged_in')) { ?>
+            <div class="featured-box nobg border-only left-separator">
+                          
+                    
+            </div>
+        <?php } else { ?>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form id="loginForm" method="post">
+    <?php echo validation_errors('<div class="row"><div class="col-md-12"><div class="alert alert-danger"><i class="fa fa-frown-o"></i>', '</div></div></div>'); ?>
         <h2 class="text-center"><img src="<?php echo base_url()?>/assets/images/ft.jpg" width="100" height="100"/></h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <input type="text" class="form-control" placeholder="Username/Email" id="email" name="email" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block" name="submit_login" data-loading-text="Loading...">Log in</button>
         </div>
         <div class="clearfix">
             <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
             <a href="#" class="pull-right">Forgot Password?</a>
-        </div>        
-    </form>
+        </div> 
+        </form>       
+        <?php }?>
 </div>
 </body>
 </html>                                		                        
